@@ -1,0 +1,394 @@
+/* Base styles */
+:root {
+  /* Light theme variables (for comparison) */
+  --primary-color: #4f46e5;
+  --primary-dark: #4338ca;
+  --primary-light: #6366f1;
+  --success-color: #059669;
+  --warning-color: #d97706;
+  --error-color: #dc2626;
+  --text-dark: #111827;
+  --text-medium: #4b5563;
+  --text-light: #9ca3af;
+  --background-light: #f9fafb;
+
+  /* Dark theme colors */
+  --dark-bg-primary: #111827;
+  --dark-bg-secondary: #1f2937;
+  --dark-bg-tertiary: #374151;
+  --dark-text-primary: #f9fafb;
+  --dark-text-secondary: #e5e7eb;
+  --dark-text-tertiary: #d1d5db;
+  --dark-border-color: #374151;
+  --dark-hover-bg: #2d3748;
+  --dark-card-bg: #1f2937;
+  --dark-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
+  --dark-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+  --dark-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+}
+
+/* Dark theme body styles */
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  color: var(--dark-text-primary);
+  background-color: var(--dark-bg-primary);
+}
+
+/* Section base styles with dark theme */
+section {
+  position: relative;
+  z-index: 1;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Text visibility overrides for dark theme */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--dark-text-primary) !important;
+}
+
+p, span, div {
+  color: var(--dark-text-secondary);
+}
+
+/* Specific overrides for CourseCategories section */
+#categories h2,
+#categories h3 {
+  color: var(--dark-text-primary) !important;
+}
+
+#categories p {
+  color: var(--dark-text-secondary) !important;
+}
+
+#categories .text-white {
+  color: white !important;
+}
+
+/* Specific overrides for Testimonials section */
+.testimonial-quote,
+blockquote p {
+  color: var(--dark-text-primary) !important;
+}
+
+/* Fixed animation styles that maintain visibility */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+  opacity: 1 !important;
+}
+
+.animate-fade-in-delay {
+  animation: fadeIn 0.6s ease-out 0.3s forwards;
+  opacity: 1 !important;
+}
+
+.animate-fade-in-delay-2 {
+  animation: fadeIn 0.6s ease-out 0.6s forwards;
+  opacity: 1 !important;
+}
+
+/* Fixed floating animation */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-10px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+.float-animation {
+  animation: float 5s ease-in-out infinite;
+  opacity: 1 !important;
+}
+
+/* Button hover effects for dark theme */
+.btn-hover-grow {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 1;
+  background-color: var(--dark-bg-secondary);
+  color: var(--dark-text-primary);
+}
+
+.btn-hover-grow:hover {
+  transform: scale(1.05);
+  box-shadow: var(--dark-shadow-lg);
+  background-color: var(--dark-hover-bg);
+  opacity: 1;
+}
+
+/* Dark theme gradient backgrounds */
+.bg-gradient-primary {
+  background: linear-gradient(135deg, var(--dark-bg-secondary) 0%, var(--dark-bg-tertiary) 100%);
+  position: relative;
+  z-index: 1;
+}
+
+.bg-gradient-secondary {
+  background: linear-gradient(135deg, var(--dark-bg-primary) 0%, var(--dark-bg-secondary) 100%);
+  position: relative;
+  z-index: 1;
+  color: var(--dark-text-primary) !important;
+}
+
+/* Card hover animations with dark theme */
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  z-index: 2;
+  opacity: 1;
+  background-color: var(--dark-card-bg);
+  box-shadow: var(--dark-shadow-sm);
+}
+
+.card-hover:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--dark-shadow-lg);
+  opacity: 1;
+}
+
+/* Navigation link effects for dark theme */
+.nav-underline {
+  position: relative;
+  color: var(--dark-text-secondary);
+  opacity: 1;
+}
+
+.nav-underline::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--primary-color);
+  transition: width 0.3s ease;
+  opacity: 1;
+}
+
+.nav-underline:hover {
+  color: var(--primary-light);
+  opacity: 1;
+}
+
+.nav-underline:hover::after {
+  width: 100%;
+  opacity: 1;
+}
+
+/* Text shadow with maintained visibility */
+.text-shadow {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  opacity: 1;
+}
+
+/* Testimonial styles with dark theme */
+.testimonial-quote {
+  position: relative;
+  padding: 1.5rem;
+  background-color: var(--dark-card-bg);
+  border-radius: 1rem;
+  z-index: 2;
+  opacity: 1;
+  color: var(--dark-text-primary) !important;
+  box-shadow: var(--dark-shadow-md);
+}
+
+.testimonial-quote::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 5rem;
+  color: var(--primary-light);
+  opacity: 0.1;
+  font-family: Georgia, serif;
+  line-height: 1;
+  transform: translateY(-30%);
+  z-index: 1;
+}
+
+/* Dark theme testimonial card text */
+.bg-dark blockquote p {
+  color: var(--dark-text-primary) !important;
+}
+
+/* Scroll animations */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-on-scroll.animate-in {
+  opacity: 1 !important;
+  transform: translateY(0);
+}
+
+/* Custom focus styles for dark theme */
+.custom-focus:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.3);
+  border-color: var(--primary-color);
+  opacity: 1;
+}
+
+/* Highlight text style for dark theme */
+.highlight-text {
+  background: linear-gradient(transparent 60%, rgba(99, 102, 241, 0.2) 40%);
+  padding: 0 4px;
+  opacity: 1;
+  color: var(--dark-text-primary);
+}
+
+/* Custom bullet lists for dark theme */
+.custom-bullet-list {
+  list-style: none;
+  padding-left: 1.5rem;
+  opacity: 1;
+}
+
+.custom-bullet-list li {
+  position: relative;
+  margin-bottom: 0.75rem;
+  opacity: 1;
+  color: var(--dark-text-secondary);
+}
+
+.custom-bullet-list li::before {
+  content: "";
+  position: absolute;
+  left: -1.5rem;
+  top: 0.5rem;
+  height: 8px;
+  width: 8px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  opacity: 1;
+}
+
+/* Z-index management */
+.z-base {
+  z-index: 1;
+}
+
+.z-above {
+  z-index: 2;
+}
+
+.z-top {
+  z-index: 10;
+}
+
+.z-modal {
+  z-index: 50;
+}
+
+.z-overlay {
+  z-index: 40;
+}
+
+/* Dark theme fixes for category cards */
+.rounded-xl h3 {
+  color: var(--dark-text-primary) !important;
+}
+
+.rounded-xl p {
+  color: var(--dark-text-secondary) !important;
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  .print-friendly {
+    background: none !important;
+    color: #000 !important;
+    opacity: 1 !important;
+  }
+}
+
+/* Responsive visibility fixes */
+@media screen and (max-width: 768px) {
+  section {
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  
+  .mobile-visible {
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  
+  #categories h2, 
+  #categories h3,
+  #categories p {
+    color: var(--dark-text-primary) !important;
+  }
+}
+
+/* Dark theme transition properties */
+.transition-opacity {
+  transition-property: opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 1;
+}
+
+.transition-transform {
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 1;
+}
+
+/* Dark theme text color fixes */
+.bg-dark h2,
+.bg-dark h3,
+.bg-dark h4,
+.bg-dark p,
+.bg-dark div:not(.text-white):not(.text-indigo-600):not(.text-green-800) {
+  color: var(--dark-text-primary) !important;
+}
+
+.bg-dark .text-gray-600,
+.bg-dark .text-gray-700 {
+  color: var(--dark-text-secondary) !important;
+}
+
+/* Dark theme custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--dark-bg-secondary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-dark);
+}
